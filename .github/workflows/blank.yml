@@ -1,18 +1,32 @@
+# Nome do workflow - apenas uma etiqueta para identificação
 name: Meu Primeiro Workflow no GitHub Actions
 
+# Definindo quando o workflow deve ser acionado
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Aciona o workflow quando há um push para o branch 'main'
   push:
     branches: [ "main" ]
+  
+  # Aciona o workflow quando há uma pull request aberta ou atualizada no branch 'main'
   pull_request:
     branches: [ "main" ]
 
+  # Permite que o workflow seja iniciado manualmente via interface do GitHub
   workflow_dispatch:
 
+# Definindo os jobs (tarefas) a serem executados
 jobs:
+  # Nome do job
   job01:
+    # Define o ambiente onde o job será executado (Ubuntu mais recente)
     runs-on: ubuntu-latest
+
+    # Definindo as etapas (steps) do job
     steps:
+      # Primeira etapa: usar a ação 'checkout' para baixar o código do repositório
       - uses: actions/checkout@v4
+      
+      # Segunda etapa: executar um comando shell simples
       - name: Run a one-line script
+        # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
         run: echo Hello, world!
