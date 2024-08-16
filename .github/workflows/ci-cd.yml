@@ -1,24 +1,31 @@
-name: CI / CD Pipeline
-on:
-  push:
-    branches:
-      - main
+# Nome do workflow - apenas uma etiqueta para identificação
+name: Test Workflow
 
+# Definindo quando o workflow deve ser acionado
+on:
+  # Aciona o workflow quando há um push para o branch 'main'
+  push:
+    branches: [main, developer]
+
+# Definindo os jobs (tarefas) a serem executados
 jobs:
-  build-and-test:
+  # Nome do job
+  test_job:
+    name: Executando job de teste
+    # Define o ambiente onde o job será executado (Ubuntu mais recente)
     runs-on: ubuntu-latest
 
+    # Definindo as etapas (steps) do job
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # Primeira etapa: usar a ação 'checkout' para baixar o código do repositório
+      - name: Step 1
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
+      # Segunda etapa: executar um comando shell simples
+      - name: Step 2
+        # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
+        run: echo Hello, world!
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
+      - name: Step 3
+        # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
+        run: echo Olá, aqui é o teste 3.
