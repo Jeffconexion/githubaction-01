@@ -5,7 +5,7 @@ name: Test Workflow
 on:
   # Aciona o workflow quando há um push para o branch 'main'
   push:
-    branches: [ main, developer ]
+    branches: [main, developer]
 
 # Definindo os jobs (tarefas) a serem executados
 jobs:
@@ -20,12 +20,12 @@ jobs:
       # Primeira etapa: usar a ação 'checkout' para baixar o código do repositório
       - name: Step 1
         uses: actions/checkout@v4
-      
+
       # Segunda etapa: executar um comando shell simples
       - name: Step 2
         # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
         run: echo Hello, world!
 
-        - name: Step 3
+      - name: Step 3
         # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
         run: echo Olá, aqui é o teste 3.
