@@ -5,12 +5,14 @@ name: Test Workflow
 on:
   # Aciona o workflow quando há um push para o branch 'main'
   push:
-    - feature/*
-    - bugfix/*
+    branches:
+      - feature/*
+      - bugfix/*
   pull_request:
-    - develop
-    - homologacao
-    - master
+    branches:
+      - develop
+      - homologacao
+      - master
 
 # Definindo os jobs (tarefas) a serem executados
 jobs:
