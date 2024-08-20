@@ -4,8 +4,10 @@ name: Test Workflow
 # Definindo quando o workflow deve ser acionado
 on:
   # Aciona o workflow quando há um push para o branch 'main'
-  push:
-    branches: [main, developer]
+  pull_request:
+    - develop
+    - homologacao
+    - master
 
 # Definindo os jobs (tarefas) a serem executados
 jobs:
