@@ -28,5 +28,5 @@ jobs:
 
       # Segunda etapa: executar um comando shell simples
       - name: Step 2
-        # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
+        # O comando 'echo Hello, world!' imprime "Hello, world!" no termina
         run: echo Hello, world!
