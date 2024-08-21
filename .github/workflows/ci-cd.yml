@@ -14,7 +14,7 @@ on:
       - homologacao
       - master
 
-# Definindo os jobs (tarefas) a serem executados
+# Definindo os jobs (tarefas) a serem executado
 jobs:
   # Nome do job
   test_job:
