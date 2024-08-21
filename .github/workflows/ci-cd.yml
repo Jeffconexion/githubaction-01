@@ -4,10 +4,15 @@ name: Test Workflow
 # Definindo quando o workflow deve ser acionado
 on:
   # Aciona o workflow quando há um push para o branch 'main'
+  push:
+    branches:
+      - feature/*
+      - bugfix/*
   pull_request:
-    - develop
-    - homologacao
-    - master
+    branches:
+      - develop
+      - homologacao
+      - master
 
 # Definindo os jobs (tarefas) a serem executados
 jobs:
@@ -25,9 +30,5 @@ jobs:
 
       # Segunda etapa: executar um comando shell simples
       - name: Step 2
-        # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
+        # O comando 'echo Hello, world!' imprime "Hello, world!" no termina
         run: echo Hello, world!
-
-      - name: Step 3
-        # O comando 'echo Hello, world!' imprime "Hello, world!" no terminal
-        run: echo Olá, aqui é o teste 3.
